@@ -1,7 +1,9 @@
-import { checkApiLimit } from "@/lib/api-limit";
+// import { checkApiLimit } from "@/lib/api-limit";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
+
+import { increaseApiLimit,checkApiLimit } from "@/lib/api-limit";
 
 // Initialize OpenAI with the API key
 const openai = new OpenAI({
@@ -44,6 +46,8 @@ export async function POST(req: NextRequest) {
 
     // Log the OpenAI API response for debugging
     console.log("OpenAI Response:", response);
+
+    await increaseApiLimit(req);
 
     // Check if response contains data and extract the image URLs
     const imageUrls = response.data?.map((image: { url?: string }) => ({

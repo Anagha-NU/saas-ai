@@ -1,4 +1,4 @@
-import { checkApiLimit } from "@/lib/api-limit";
+import {increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { getAuth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
@@ -60,6 +60,8 @@ export async function POST(req: NextRequest) {
         ...messages, // Spread user-provided messages
       ],
     });
+
+    await increaseApiLimit(req);
 
     // Log OpenAI response for debugging
     console.log("OpenAI Response:", response);
