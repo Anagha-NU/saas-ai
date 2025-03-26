@@ -1,3 +1,33 @@
+🚀 SaaS AI Platform
+
+📝 Overview
+
+The SaaS AI Platform is a cutting-edge web application that provides AI-powered tools as services. It is built using Next.js 13 (App Router), Prisma, Tailwind, MySQL, Clerk for authentication, and Stripe for subscriptions.
+
+✨ Features
+
+
+AI Image Generation 🎨
+
+AI Chatbot 🤖
+
+User Authentication with Clerk 🔑
+
+Subscription System with Stripe 💳
+
+Prisma ⚡
+
+🛠️ Tech Stack
+
+Frontend: Next.js 13, React, Tailwind CSS
+
+Backend:  Prisma, MySQL
+
+Authentication: Clerk
+
+Deployment: Verce
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
